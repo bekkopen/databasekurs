@@ -3,7 +3,7 @@ Databasekurs
 
 Beskrivelse
 ------------
-Database er ikke bare database lenger, de kommer i alle former og fasonger. Vi gir dere et innføring i og opplæring i to vidt forskjellige databaser som gir dere helt nye muligheter utover hva tradisjonelle relasjonelle databaser kan tilby.
+Database er ikke bare database lenger, de kommer i alle former og fasonger. Vi gir dere en innføring i og opplæring i to vidt forskjellige databaser som gir dere helt nye muligheter utover hva tradisjonelle relasjonelle databaser kan tilby.
 
 Første kveld gir vi dere en intro til MongoDB. Det første man kan bite seg merke i med MongoDB er enkelheten. Denne databasen skinner virkelig når man trenger å sette sammen noe i en fart!
 
