@@ -1,0 +1,20 @@
+﻿foo,Varenavn,Volum,Pris,Literpris,Varetype,Fylde,Friskhet,Garvestoffer,Bitterhet,Sødme,Land,Distrikt,Underdistrikt,Alkohol,Sukker,Produsent,Emballasjetype,Vareurl
+,Løiten Linie,0.7,399.9,571.3,Akevitt,0,0,0,0,0,Norge,Øvrige,Øvrige,41.5,5,,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-1101
+,Løiten Linie,0.35,239.9,685.4,Akevitt,0,0,0,0,0,Norge,Øvrige,Øvrige,41.5,5,,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-1102
+,Gilde Non Plus Ultra,0.7,599.9,857,Akevitt,0,0,0,0,0,Norge,Øvrige,Øvrige,41.5,3,,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-1201
+,Aalborg Taffel Akvavit,0.7,329.9,471.3,Akevitt,0,0,0,0,0,Danmark,Øvrige,,45,Ukjent,V&S Dist.,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-1301
+,Aalborg Taffel Akvavit,0.35,219.9,628.3,Akevitt,0,0,0,0,0,Danmark,Øvrige,,45,Ukjent,V&S Dist.,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-1302
+,Løiten Export,0.5,274.9,549.8,Akevitt,0,0,0,0,0,Norge,Øvrige,Øvrige,40,8,,PET,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-1502
+,Bommerlunder,0.7,319.9,457,Akevitt,0,0,0,0,0,Tyskland,Øvrige,Øvrige,38,Ukjent,Berentzen Dist.,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-1801
+,Graham's Late Bottled Vintage 2008,0.75,199.9,266.5,Portvin,9,8,0,0,9,Portugal,Douro,Øvrige,20,101.5,W&J Graham,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-2001
+,Graham's Late Bottled Vintage 2008,0.38,115,306.7,Portvin,8,8,0,0,8,Portugal,Douro,Øvrige,20,101.5,W&J Graham,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-2002
+,Brennevin Seksti,0.7,424.9,607,Vodka,0,0,0,0,0,Norge,Øvrige,Øvrige,60,Ukjent,,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-2401
+,Hammer,0.7,309.9,442.7,Vodka,0,0,0,0,0,Norge,Øvrige,Øvrige,42.7,Ukjent,,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-3501
+,Hammer,0.35,184.9,528.3,Vodka,0,0,0,0,0,Norge,Øvrige,Øvrige,42.7,Ukjent,,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-3502
+,Finlandia,0.7,304.9,435.6,Vodka,0,0,0,0,0,Finland,Øvrige,Øvrige,37.5,Ukjent,Altia Corp.,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-3801
+,Finlandia,0.05,59,1180.1,Vodka,0,0,0,0,0,Finland,Øvrige,Øvrige,40,Ukjent,Altia Corp.,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-3803
+,Absolut Vodka,0.7,304.9,435.6,Vodka,0,0,0,0,0,Sverige,Øvrige,Øvrige,40,Ukjent,The Absolut Company,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-3901
+,Absolut Vodka,0.35,179.9,514,Vodka,0,0,0,0,0,Sverige,Øvrige,Øvrige,40,Ukjent,The Absolut Company,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-3902
+,Hammer Lime,0.7,309.9,442.7,Vodka,0,0,0,0,0,Norge,Øvrige,Øvrige,42.7,Ukjent,,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-4401
+,Absolut Citron,0.7,324.9,464.1,Vodka,0,0,0,0,0,Sverige,Øvrige,Øvrige,40,Ukjent,The Absolut Company,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-4801
+,Bonaparte V.S.O.P.,0.7,429.9,614.1,Druebrennevin,0,0,0,0,0,Frankrike,Cognac Tradisjonell,Øvrige,40,Ukjent,,Engangsflasker av glass,http://www.vinmonopolet.no/vareutvalg/varedetaljer/sku-5201
