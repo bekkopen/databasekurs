@@ -1,22 +1,31 @@
-//CREATE INDEX ON :LiquorType(name);
-//CREATE INDEX ON :Category(name);
-//CREATE INDEX ON :Producer(name);
-//CREATE INDEX ON :Origin(name);
-//CREATE INDEX ON :ContainerSize(name);
-//CREATE INDEX ON :Packaging(name);
+// Indeks på liquor type
+CREATE INDEX ON :LiquorType(name);
 
+// Indeks på liquor category
+CREATE INDEX ON :Category(name);
 
+// Indeks på producer
+CREATE INDEX ON :Producer(name);
+
+// Indeks på origin
+CREATE INDEX ON :Origin(name);
+
+// Indeks på container size
+CREATE INDEX ON :ContainerSize(name);
+
+// Indeks på packaging
+CREATE INDEX ON :Packaging(name);
+
+// Indeks på varenummer
+CREATE INDEX ON :Product(varenummer);
+
+//Les inn produktkatalogen til vinmonopolet
 USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:E:/dropbox/My Dropbox/work/NOSQL-kurs/Neo4J/data/vinmonopolet_vask2.csv" AS csv
-
-MERGE (liquorType:LiquorType { name: coalesce(csv.Varenavn, "Ukjent") })
-MERGE (cPrim:Category {name:coalesce(csv.Varetype, "Ukjent")})
-MERGE(producer:Producer {name:coalesce(csv.Produsent, "Ukjent")})
-MERGE(origin:Origin {name:coalesce(csv.Land, "Ukjent"), country:csv.Land, district:csv.Distrikt, subDistrict:csv.Underdistrikt})
-MERGE(size:ContainerSize {name:coalesce(toFloat(csv.Volum) * 1000, 0)})
-MERGE (package:Packaging { name: coalesce(csv.Emballasjetype, "Ukjent")})
+//LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/bekkopen/databasekurs/neo4j/neo4j/data/vinmonopolet_vasket.csv" AS csv
+LOAD CSV WITH HEADERS FROM "file:E:/Workspace/Jobber og Prosjekter/databasekurs/neo4j/data/vinmonopolet_tiny.csv" AS csv
 
 CREATE (unit:Product {
+   varenummer: csv.Varenummer,
    description: toFloat(csv.Volum) * 1000 + "ml " + csv.Emballasjetype + " of " + csv.Varenavn,
    price: toFloat(csv.Pris),
    url: csv.Vareurl,
@@ -24,9 +33,27 @@ CREATE (unit:Product {
    abv: toFloat(csv.Alkohol)
   })
 
-CREATE (unit)-[:IS_OF_TYPE]->(liquorType)
-CREATE (unit)-[:IS_OF_CATEGORY {qualifier:"primary"}]->(cPrim)
-CREATE (unit)-[:PRODUCED_BY]->(producer)
-CREATE (unit)-[:ORIGINATES_IN]->(origin)
-CREATE (unit)-[:SIZE_OF_CONTAINER]->(size)
-CREATE (unit)-[:PACKAGED_IN]->(package)
+FOREACH(Varenavn IN (CASE WHEN csv.Varenavn <> "" THEN [csv.Varenavn] ELSE [] END) |
+    MERGE (liquorType:LiquorType { name: Varenavn })
+    CREATE (unit)-[:IS_OF_TYPE]->(liquorType)
+)
+FOREACH(Varetype IN (CASE WHEN csv.Varetype <> "" THEN [csv.Varetype] ELSE [] END) |
+    MERGE (cPrim:Category { name:Varetype})
+    CREATE (unit)-[:IS_OF_CATEGORY {qualifier:"primary"}]->(cPrim)
+)
+FOREACH(produsent IN (CASE WHEN csv.Produsent <> "" THEN [csv.Produsent] ELSE [] END) |
+    MERGE (producer:Producer { name:produsent })
+    CREATE (unit)-[:PRODUCED_BY]->(producer)
+)
+FOREACH(Land IN (CASE WHEN csv.Land <> "" THEN [csv.Land] ELSE [] END) |
+    MERGE (origin:Origin { name:Land, country:Land, district:csv.Distrikt, subDistrict:csv.Underdistrikt})
+    CREATE (unit)-[:ORIGINATES_IN]->(origin)
+)
+FOREACH(Volum IN (CASE WHEN csv.Volum <> "" THEN [csv.Volum] ELSE [] END) |
+    MERGE (size:ContainerSize { name:toFloat(Volum) * 1000})
+    CREATE (unit)-[:SIZE_OF_CONTAINER]->(size)
+)
+FOREACH(Emballasjetype IN (CASE WHEN csv.Emballasjetype <> "" THEN [csv.Emballasjetype] ELSE [] END) |
+    MERGE (package:Packaging { name: Emballasjetype})
+    CREATE (unit)-[:PACKAGED_IN]->(package)
+)
