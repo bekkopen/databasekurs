@@ -17,18 +17,22 @@ We believe this is an important database to you guys because of the simplicity. 
 ## Basic operations
 
 ### Get by id
+
 ```
 ```
 
 ### Get by filter
+
 ```
 ```
 
 ### Insert
+
 ```
 ```
 
 ### Update
+
 ```
 ```
 
