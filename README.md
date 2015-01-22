@@ -5,7 +5,7 @@ Beskrivelse
 ------------
 Database er ikke bare database lenger, de kommer i alle former og fasonger. Vi gir dere en innføring i og opplæring i to vidt forskjellige databaser som gir dere helt nye muligheter utover hva tradisjonelle relasjonelle databaser kan tilby.
 
-Første kveld gir vi dere en intro til MongoDB. Det første man kan bite seg merke i med MongoDB er enkelheten. Denne databasen skinner virkelig når man trenger å sette sammen noe i en fart!
+MongoDB er en veldig populær dokumentdatabase. Dokumentdatabaser er en klasse databaser som prøver å kombinere skalerbarheten og enkelheten fra Key-Value stores med den enorme funksjonaliteten til relasjonelle databaser. I tillegg til å tilby høy skalerbarhet og mye funksjonalitet har MongoDB vist seg å være enkel i bruk for utviklere. Fokuset for denne første kurskvelden blir MongoDB som et verktøy for å lage små applikasjoner raskt.
 
 Kveld to er det Neo4j som er i fokus. Denne grafdatabasen viser sin styrke når den kan traversere data som er sterkt sammenkoblede. Den er godt egnet i brukstilfeller som sosiale nettverk, realtime data-analyse og anbefalingsmotorer.
 
