@@ -1,28 +1,28 @@
-// Indeks på liquor type
+// Indeks pï¿½ liquor type
 CREATE INDEX ON :LiquorType(name);
 
-// Indeks på liquor category
+// Indeks pï¿½ liquor category
 CREATE INDEX ON :Category(name);
 
-// Indeks på producer
+// Indeks pï¿½ producer
 CREATE INDEX ON :Producer(name);
 
-// Indeks på origin
+// Indeks pï¿½ origin
 CREATE INDEX ON :Origin(name);
 
-// Indeks på container size
+// Indeks pï¿½ container size
 CREATE INDEX ON :ContainerSize(name);
 
-// Indeks på packaging
+// Indeks pï¿½ packaging
 CREATE INDEX ON :Packaging(name);
 
-// Indeks på varenummer
+// Indeks pï¿½ varenummer
 CREATE INDEX ON :Product(varenummer);
 
 //Les inn produktkatalogen til vinmonopolet
 USING PERIODIC COMMIT
 //LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/bekkopen/databasekurs/neo4j/neo4j/data/vinmonopolet_vasket.csv" AS csv
-LOAD CSV WITH HEADERS FROM "file:E:/Workspace/Jobber og Prosjekter/databasekurs/neo4j/data/vinmonopolet_tiny.csv" AS csv
+LOAD CSV WITH HEADERS FROM "file:E:/jobb/nosqlkurs/databasekurs/neo4j/data/vinmonopolet-utf8.csv" AS csv
 
 CREATE (unit:Product {
    varenummer: csv.Varenummer,
@@ -56,4 +56,4 @@ FOREACH(Volum IN (CASE WHEN csv.Volum <> "" THEN [csv.Volum] ELSE [] END) |
 FOREACH(Emballasjetype IN (CASE WHEN csv.Emballasjetype <> "" THEN [csv.Emballasjetype] ELSE [] END) |
     MERGE (package:Packaging { name: Emballasjetype})
     CREATE (unit)-[:PACKAGED_IN]->(package)
-)
+);
