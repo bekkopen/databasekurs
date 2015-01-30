@@ -40,4 +40,12 @@ Kveld 3:
     - Finne gitte felt for et produkt (title, category, alcohol)
     - nyeste handlekurver for en bruker
     - adresser
-- Boks og pil session
+- Boks og pil session / diskusjon session
+    - Normalisering vs denormalisering
+    - Aksesspatterns
+        - Et aksesspattern
+        - Flere aksesspatterns
+        - Vet ikke (event-store?)
+    - Modellering caser
+        - Vinmopolet.no (har disse ønskene)
+        - Finn din vin (anbefallingsmotor)
