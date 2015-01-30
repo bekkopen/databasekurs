@@ -5,7 +5,7 @@ def purchases(item_codes, users, number_of_carts, max_items_per_cart)
   purchases = []
   cart_id = 1
   number_of_carts.times do
-    user_name = users.sample[:username]
+    user_name = users.sample[:_id]
     item_codes.sample(rand(max_items_per_cart)).each do |item|
       purchase = {
           :cart_id => cart_id,
