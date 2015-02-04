@@ -2,7 +2,7 @@
 
 1. ### Fetch by Id
 
-    From the user collection, find the user with username (_id) 'morar.reva'.
+    From the user collection, find the user with username (_id) 'herzog_ed'.
 
     _For this query you should use [FindOne](http://docs.mongodb.org/manual/reference/method/db.collection.findOne/)_
 
@@ -18,16 +18,16 @@
 
     _For this you need to use [Find](http://docs.mongodb.org/manual/reference/method/db.collection.find/), [Sort](http://docs.mongodb.org/manual/reference/method/cursor.sort/#cursor.sort) and [Limit](http://docs.mongodb.org/manual/reference/method/cursor.limit/)._
 
-4. ### Find the title of all bottles from Norway
+4. ### Find all products from The Glenlivet
 
-    Find the title, and only the title, of all products originating from Norway (Norge).
+    Find all products which title starts with The Glenlivet. Only project the title field.
 
-    _New for this query is the use of [projection](http://docs.mongodb.org/manual/reference/method/db.collection.find/#projections) as a parameter to the find query and the use of a regex for filtering._
+    You can use a query like `{"title": /^TERM/}` to find all documents where title starts with the term TERM.
 
-    _The query `{countryRegion: /^Norge/}` will find you all products from Norway, as all the countryRegion string has the form `country, region, near-region`._
+    _New for this query is the use of [projection](http://docs.mongodb.org/manual/reference/method/db.collection.find/#projections) as a parameter to the find query and the use of a [regex](http://docs.mongodb.org/manual/reference/operator/query/regex/) for querying._
 
 5. ### Paginated list of products
 
-    Sort products on `countryRegion` then `title`, both descending. Return only three products, but skip 1200 products.
+    Often you will want to paginate the results of a large result set. Find all beers `category: "Øl"` with a container size of 50 cl `containerSize: "50 cl"`. Only return products 11 - 15.
 
     _To accomplish this you will need to use [Skip](http://docs.mongodb.org/manual/reference/method/cursor.skip/) and [Limit](http://docs.mongodb.org/manual/reference/method/cursor.limit/) together._
