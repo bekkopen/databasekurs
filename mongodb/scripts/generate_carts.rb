@@ -1,21 +1,16 @@
 # encoding: UTF-8
 require 'rubygems'
 
-def purchases(item_codes, users, number_of_carts, max_items_per_cart)
-  purchases = []
-  cart_id = 1
-  number_of_carts.times do
-    user_name = users.sample[:_id]
-    item_codes.sample(rand(max_items_per_cart)).each do |item|
-      purchase = {
-          :cart_id => cart_id,
-          :username => user_name,
-          :varenummer => item
-      }
-      purchases << purchase
-    end
-
-    cart_id += 1
+def purchases(item_codes, users, max_carts_per_user, max_items_per_cart)
+  users.each do |user|
+    user[:carts] = []
+    rand(max_carts_per_user).times {
+      cart = []
+      item_codes.sample(rand(1..max_items_per_cart)).each do |item|
+        cart << item.to_i
+      end
+      user[:carts] << cart
+    }
   end
-  purchases
+  users
 end

@@ -38,5 +38,4 @@ end
 Benchmark.bm do |x|
     x.report('users') { dumpValidJSON('generated/users.json', 'users') }
     x.report('products') { dump('../data/vinmonopolet.json', 'products') }
-    x.report('carts') { dumpValidJSON('generated/carts.json', 'carts') }
 end
