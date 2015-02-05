@@ -9,7 +9,9 @@ def purchases(item_codes, users, max_carts_per_user, max_items_per_cart)
       item_codes.sample(rand(1..max_items_per_cart)).each do |item|
         cart << item.to_i
       end
-      user[:carts] << cart
+      user[:carts] << {
+        :products => cart
+      }
     }
   end
   users

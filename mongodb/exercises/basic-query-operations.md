@@ -2,7 +2,7 @@
 
 1. ### Fetch by Id
 
-    From the user collection, find the user with username (_id) 'herzog_ed'.
+    From the user collection, find the user with username (_id) 'kathryn_brakus'.
 
     _For this query you should use [FindOne](http://docs.mongodb.org/manual/reference/method/db.collection.findOne/)_
 

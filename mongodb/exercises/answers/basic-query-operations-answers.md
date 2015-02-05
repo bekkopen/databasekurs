@@ -2,19 +2,26 @@
 
 1. ### Fetch by Id
     ```js
-    > db.users.findOne({_id: 'herzog_ed'});
+    > db.users.findOne({_id: 'kathryn_brakus'});
     {
-      "_id" : "herzog_ed",
-      "name" : "Ed Herzog",
-      "birthdate" : ISODate("1984-07-12T00:00:00Z"),
-      "email" : "ed.herzog@yahoo.com",
+      "_id" : "kathryn_brakus",
+      "name" : "Kathryn Brakus",
+      "birthdate" : ISODate("1969-04-07T00:00:00Z"),
+      "email" : "kathryn_brakus@yahoo.com",
       "sex" : "female",
-      "phone" : 94387349,
+      "phone" : 98855330,
       "carts" : [
-        [
-          994901,
-          1469401
-        ]
+        {
+          "products" : [
+            937002,
+            1130501,
+            319301,
+            9548307,
+            7207702,
+            484701,
+            3318201
+          ]
+        }
       ]
     }
     ```
@@ -23,7 +30,7 @@
 
     ```js
 > db.users.count({sex: 'male'})
-2432
+2522
     ```
 
 3. ### Cheapest beer
