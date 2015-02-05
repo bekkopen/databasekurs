@@ -1,5 +1,7 @@
 # Inserts, updates and removes
 
+_Look at the mongodb/README.md for how to access the mongo shell where you will perform these exercises._
+
 1. ### Insert yourself
     Add a yourself as a user in the users collection.
 

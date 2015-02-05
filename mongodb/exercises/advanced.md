@@ -1,4 +1,7 @@
 # Advanced exercises
+
+_Look at the mongodb/README.md for how to access the mongo shell where you will perform these exercises._
+
 In this section there will really be a mixture of exercises in different categories. Do not feel obliged to do them sequentially.
 
 1. ### Advanced queries
