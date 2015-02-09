@@ -145,8 +145,8 @@
     { "was" : 0, "slowms" : 100, "ok" : 1 }
     > db.products.find({category: "Øl"})
     ...
-    > db.system.profile.find({ns: "kursserie.products", "query.category": "Øl"}, {nscanned: 1})
-{ "nscanned" : 1573 }
+    > db.system.profile.find({ns: "kursserie.products", "query.category": "Øl"})
+    ...
     ```
   #### Explain
     ```js
@@ -173,7 +173,7 @@
     Also the performance in ms has heavily improved (in my case from 23ms to 2ms).
 
     You can know that you have utilzed an index by looking at the cursor field. When it is a BtreeCursor, it uses an index. In this case it uses the index with the name category_1. You can review all active indexes with the db.products.getIndexes() command.
-    
+
     ```js
     > db.products.ensureIndex({category: 1})
 {

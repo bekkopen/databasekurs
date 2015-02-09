@@ -74,7 +74,7 @@ In this section there will really be a mixture of exercises in different categor
   #### Set profiling level
     By default the [profiling](http://docs.mongodb.org/manual/reference/method/db.setProfilingLevel/) is turned off. When developing however, it can be smart to enable profiling of all queries. The performance of and all queries are then stored in a profiling collection `db.system.profile`. Set the profiling level to profile all operations.
 
-    After setting the profiling level run the following query `db.products.find({category: "Øl"})`. Now check how many documents this query scanned in the `db.system.profile` collection.
+    After setting the profiling level run the following query `db.products.find({category: "Øl"})`. In the `db.system.profile` collection now find the entries of only this query.
 
     _In production monitoring only slow queries is a good way to help enhance the performance your application. Setting the profiling level to 1 will only profile queries that run longer than a treshold you define i.e. 100ms._
 
