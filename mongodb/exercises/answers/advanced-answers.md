@@ -62,3 +62,78 @@
 { "_id" : 1776602, "title" : "Blossa Stärkvinsgløgg spetsad med Cognac", "containerSize" : "50 cl", "price" : 148.3, "pricePerLiter" : 296.6, "productType" : "Aromatisert sterkvin", "productSelection" : "Bestillingsutvalg", "shopCategory" : "Uavhengig sortiment", "color" : "Dyp brunrød.", "aroma" : "Rik aroma av tørket frukt, nellik og kanel, innslag av cognac.", "taste" : "Sval og fint sammensatt gløgg med god fylde, søt.", "foodPairings" : "Apertiff, Ost, Dessert, kake, frukt", "countryRegion" : "Sverige, Øvrige, Øvrige", "ingredients" : "Sterkvin, gløggkrydder, nellik, kardemomme, ingefær, cognac", "method" : "Sterkvinsgløgg tilsatt cognac.Smakssatt med nellik, kardemomme og ingefær.", "alcohol" : 21, "sugar" : "171,00", "acid" : "Ukjent", "manufacturer" : "Altia Corp.", "wholesaler" : "Altia Norway AS", "distributor" : "Trebuchet AS", "containerType" : "Engangsflasker av glass", "corkType" : "Naturkork", "category" : "Sterkvin" }
 { "_id" : 5572002, "title" : "Luxardo Fernet", "containerSize" : "50 cl", "price" : 270, "pricePerLiter" : 540, "productType" : "Bitter", "productSelection" : "Bestillingsutvalg", "shopCategory" : "Uavhengig sortiment", "color" : "Mørk brun.", "aroma" : "Bittert, søtlig.", "taste" : "Bitter.", "foodPairings" : "Apertiff", "countryRegion" : "Italia, Øvrige, Øvrige", "ingredients" : "Sprit, Lakris, Kardemomme, Kanel", "alcohol" : 40, "sugar" : "20,00", "acid" : "Ukjent", "manufacturer" : "Girolamo Luxardo", "wholesaler" : "Cork Wines & Spirits AS", "distributor" : "Vectura AS", "containerType" : "Engangsflasker av glass", "corkType" : "Skrukapsel", "category" : "Brennevin" }
     ```
+4. ### Aggregation
+  #### Number of products in each category
+    ```js
+    > db.products.aggregate([
+        {
+          $group: { _id: "$category", numProducts: { $sum: 1 }}
+        }
+      ]);
+
+  { "_id" : "Øl", "numProducts" : 897 }
+  { "_id" : "Musserende vin", "numProducts" : 1203 }
+  { "_id" : "Rosévin", "numProducts" : 435 }
+  { "_id" : "Alkoholfritt", "numProducts" : 63 }
+  { "_id" : "Rødvin", "numProducts" : 6346 }
+  { "_id" : "Fruktvin", "numProducts" : 84 }
+  { "_id" : "Sterkvin", "numProducts" : 315 }
+  { "_id" : "Hvitvin", "numProducts" : 4117 }
+  { "_id" : "Brennevin", "numProducts" : 2418 }
+    ```
+
+  #### Cheapest and most expensive
+    ```js
+    > db.products.aggregate([
+        {
+          $group: {
+            _id: "$category",
+            minPrice: {$min: "$price"},
+            maxPrice: {$max: "$price"},
+            avgPrice: {$avg: "$price"}
+          }
+        },
+        {
+          $sort: {
+            avgPrice: 1
+          }
+        }
+      ]);
+    { "_id" : "Alkoholfritt", "minPrice" : 17, "maxPrice" : 161.4, "avgPrice" : 55.219047619047636 }
+  { "_id" : "Øl", "minPrice" : 26, "maxPrice" : 599, "avgPrice" : 72.53322185061366 }
+  { "_id" : "Fruktvin", "minPrice" : 28.4, "maxPrice" : 885.4, "avgPrice" : 153.27619047619044 }
+  { "_id" : "Rosévin", "minPrice" : 34.9, "maxPrice" : 1999, "avgPrice" : 180.78229885057473 }
+  { "_id" : "Hvitvin", "minPrice" : 29, "maxPrice" : 3599.9, "avgPrice" : 249.15853777022926 }
+  { "_id" : "Rødvin", "minPrice" : 33.9, "maxPrice" : 12500, "avgPrice" : 324.0625433343636 }
+  { "_id" : "Sterkvin", "minPrice" : 75, "maxPrice" : 19990, "avgPrice" : 438.0431746031737 }
+  { "_id" : "Musserende vin", "minPrice" : 39.9, "maxPrice" : 20999.9, "avgPrice" : 480.6807980049929 }
+  { "_id" : "Brennevin", "minPrice" : 29.9, "maxPrice" : 65000, "avgPrice" : 830.3419354838495 }
+    ```
+
+  #### Most sold product
+    ```js
+    > db.users.aggregate([
+        {
+          $unwind: "$carts"
+        },
+        {
+          $unwind: "$carts.products"
+        },
+        {
+          $group: {
+            _id: "$carts.products",
+            sold: {"$sum": 1}
+          }
+        },
+        {
+          $sort: { sold: -1 }
+        },
+        {
+          $limit: 3
+        }
+      ]);
+
+    { "_id" : 91507, "sold" : 74 }
+    { "_id" : 1425001, "sold" : 73 }
+    { "_id" : 4200201, "sold" : 72 }
+    ```

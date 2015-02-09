@@ -51,9 +51,20 @@ In this section there will really be a mixture of exercises in different categor
   #### Text search
     The text index has been added to add a simple search feature to MongoDB. Add a [text index](http://docs.mongodb.org/manual/core/index-text/#text-index-compound) to the `ingredients` field of products.
 
-    After adding the text index, try to [search](http://docs.mongodb.org/manual/reference/operator/query/text/#search-field) for `potet`.
+    After adding the text index, try to [search](http://docs.mongodb.org/manual/reference/operator/query/text/#search-field) for `kardemomme`.
 
 4. ### Aggregation
+    The [aggregation framework](http://docs.mongodb.org/manual/aggregation/) lets you make powerful group by like operations on data.
 
+    #### Number of products in each category
+      Find the total number of products in each category
 
+      _You need to use the [$group](http://docs.mongodb.org/manual/reference/operator/aggregation/group/) aggregation operator here._
+
+    #### Cheapest and most expensive
+      Of each category, find the min, max and average price. Sort the results by average price.
+
+    #### Most sold product
+    Find the _id and number of products sold of the most three most sold products.
+  _[Unwind](http://docs.mongodb.org/manual/reference/operator/aggregation/unwind/) might help unwind this one!_
 5. ### Profiling
