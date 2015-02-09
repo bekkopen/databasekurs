@@ -26,10 +26,10 @@ In this section there will really be a mixture of exercises in different categor
   ```js
   {
     "products" : [
-				1137901,
-				9139202,
-				3043401
-			]
+			1137901,
+			9139202,
+			3043401
+		]
   }
   ```
 
@@ -62,7 +62,8 @@ In this section there will really be a mixture of exercises in different categor
 
     #### Most sold product
     Find the _id and number of products sold of the most three most sold products.
-  _[Unwind](http://docs.mongodb.org/manual/reference/operator/aggregation/unwind/) might help unwind this one!_
+
+    _[Unwind](http://docs.mongodb.org/manual/reference/operator/aggregation/unwind/) might help unwind this one!_
 
 5. ### Profiling
   There are a lot of tools to help you measure how MongoDB is performing. This will be an overview of some of the most helpful techinques.
