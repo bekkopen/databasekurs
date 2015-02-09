@@ -43,10 +43,17 @@ In this section there will really be a mixture of exercises in different categor
   It is a bit tedious that `countryRegion` for a lot of norwegian products are labelled as "Norge, Øvrige, Øvrige". Change the `countryRegion` field of all such products, set its value to "Norge" instead.
 
 3. ### Indexing
-Correct use of indexes is an important tool for MongoDB.
+  Collection scans are the death of your performance, certainly for large collections. By default querying on other fields than the `_id` field will result in a collection scan. Ensuring indices on fields may help you avoid such scans.
+
+  #### Index on product title
+    [Add an index](http://docs.mongodb.org/manual/reference/method/db.collection.ensureIndex/) to the title field of products. Let the index be ascending (1).
+
+  #### Text search
+    The text index has been added to add a simple search feature to MongoDB. Add a [text index](http://docs.mongodb.org/manual/core/index-text/#text-index-compound) to the `ingredients` field of products.
+
+    After adding the text index, try to [search](http://docs.mongodb.org/manual/reference/operator/query/text/#search-field) for `potet`.
 
 4. ### Aggregation
-
 
 
 5. ### Profiling
