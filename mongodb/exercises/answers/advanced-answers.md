@@ -137,3 +137,74 @@
     { "_id" : 1425001, "sold" : 73 }
     { "_id" : 4200201, "sold" : 72 }
     ```
+
+5. ### Profiling
+  #### Set profiling level
+    ```js
+    > db.setProfilingLevel(2, 0);
+    { "was" : 0, "slowms" : 100, "ok" : 1 }
+    > db.products.find({category: "Øl"})
+    ...
+    > db.system.profile.find({ns: "kursserie.products", "query.category": "Øl"}, {nscanned: 1})
+{ "nscanned" : 1573 }
+    ```
+  #### Explain
+    ```js
+    > db.products.find({category: "Øl"}).explain()
+    {
+      "cursor" : "BasicCursor",
+      "isMultiKey" : false,
+      "n" : 897,
+      "nscannedObjects" : 15878,
+      "nscanned" : 15878,
+      "nscannedObjectsAllPlans" : 15878,
+      "nscannedAllPlans" : 15878,
+      "scanAndOrder" : false,
+      "indexOnly" : false,
+      "nYields" : 124,
+      "nChunkSkips" : 0,
+      "millis" : 23,
+      "server" : "mac-frodebjerke.local:27017",
+      "filterSet" : false
+    }
+    ```
+    Adding the index we will see that the number of scanned objects is significantly reduced. Only the documents in the actual result set are now scanned.
+
+    Also the performance in ms has heavily improved (in my case from 23ms to 2ms).
+
+    You can know that you have utilzed an index by looking at the cursor field. When it is a BtreeCursor, it uses an index. In this case it uses the index with the name category_1. You can review all active indexes with the db.products.getIndexes() command.
+    
+    ```js
+    > db.products.ensureIndex({category: 1})
+{
+  "createdCollectionAutomatically" : false,
+  "numIndexesBefore" : 3,
+  "numIndexesAfter" : 4,
+  "ok" : 1
+}
+> db.products.find({category: "Øl"}).explain()
+{
+  "cursor" : "BtreeCursor category_1",
+  "isMultiKey" : false,
+  "n" : 897,
+  "nscannedObjects" : 897,
+  "nscanned" : 897,
+  "nscannedObjectsAllPlans" : 897,
+  "nscannedAllPlans" : 897,
+  "scanAndOrder" : false,
+  "indexOnly" : false,
+  "nYields" : 7,
+  "nChunkSkips" : 0,
+  "millis" : 2,
+  "indexBounds" : {
+    "category" : [
+      [
+        "Øl",
+        "Øl"
+      ]
+    ]
+  },
+  "server" : "mac-frodebjerke.local:27017",
+  "filterSet" : false
+}
+    ```

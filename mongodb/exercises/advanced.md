@@ -67,4 +67,20 @@ In this section there will really be a mixture of exercises in different categor
     #### Most sold product
     Find the _id and number of products sold of the most three most sold products.
   _[Unwind](http://docs.mongodb.org/manual/reference/operator/aggregation/unwind/) might help unwind this one!_
+
 5. ### Profiling
+  There are a lot of tools to help you measure how MongoDB is performing. This will be an overview of some of the most helpful techinques.
+
+  #### Set profiling level
+    By default the [profiling](http://docs.mongodb.org/manual/reference/method/db.setProfilingLevel/) is turned off. When developing however, it can be smart to enable profiling of all queries. The performance of and all queries are then stored in a profiling collection `db.system.profile`. Set the profiling level to profile all operations.
+
+    After setting the profiling level run the following query `db.products.find({category: "Øl"})`. Now check how many documents this query scanned in the `db.system.profile` collection.
+
+    _In production monitoring only slow queries is a good way to help enhance the performance your application. Setting the profiling level to 1 will only profile queries that run longer than a treshold you define i.e. 100ms._
+
+  #### Explain
+    Wonder how fast a query is or if it hits an index when experementing in the mongo shell? Use  [.explain()`](http://docs.mongodb.org/manual/reference/method/cursor.explain/).
+
+    Run the `db.products.find({category: "Øl"})` query again, only now use explain with it.
+
+    It's quite obvious by the result of explain that this query is not very efficient. Add an index to the category field. Run the query with explain again. See any improvement?
