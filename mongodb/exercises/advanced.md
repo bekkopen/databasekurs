@@ -16,10 +16,6 @@ In this section there will really be a mixture of exercises in different categor
 
   _Hints can be found [here](http://docs.mongodb.org/manual/tutorial/query-documents/#match-a-field-without-specifying-array-index)_.
 
-  #### Logical query operators
-
-  Or
-
 2. ### Advanced updates
 
   #### Upserts
