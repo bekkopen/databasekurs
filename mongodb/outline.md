@@ -1,20 +1,13 @@
-
-
 1. Intro til mongo
 2. Fortelle om datasett
 3. Setup
 3. forelese enkle queries
 1. *Exercise* - basic query operations
-3. forelese endring av data
-2. *Exercise* - Insert and deletes
-3. *Exercise* - Updates
+2. *Exercise* - Insert, update and remove
 4. Mongo design and how it differ from relational
 5. *Exercise* - All kinds of exercises
 6. Forelese - når bruke mongo og drivere.
 7. Frampek - Hva skjer neste og neste-neste gang
-
-
-
 
 L = Lecture
 E = Exercise
