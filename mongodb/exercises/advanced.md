@@ -61,7 +61,7 @@ In this section there will really be a mixture of exercises in different categor
       Of each category, find the min, max and average price. Sort the results by average price.
 
     #### Most sold product
-    Find the _id and number of products sold of the most three most sold products.
+    Find the _id and number of products sold of the three most sold products.
 
     _[Unwind](http://docs.mongodb.org/manual/reference/operator/aggregation/unwind/) might help unwind this one!_
 
