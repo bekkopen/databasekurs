@@ -7,7 +7,7 @@ _Look at the mongodb/README.md for how to access the mongo shell where you will 
 
     You should at least set the fields `_id`, `name` and `birthdate`.
 
-    _Read about  [insert  in the docs](http://docs.mongodb.org/manual/reference/method/db.collection.insert/)._
+    _Read about  [insert](http://docs.mongodb.org/manual/reference/method/db.collection.insert/) in the docs._
 
     _Remember that you can use plain javascript in the shell._
 
