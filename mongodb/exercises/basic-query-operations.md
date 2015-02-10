@@ -4,7 +4,7 @@ _Look at the mongodb/README.md for how to access the mongo shell where you will 
 
 1. ### Fetch by Id
 
-    From the user collection, find the user with username (_id) 'kathryn_brakus'.
+    From the user collection, find the user with username `_id: 'kathryn_brakus'`.
 
     _For this query you should use [FindOne](http://docs.mongodb.org/manual/reference/method/db.collection.findOne/)_
 
