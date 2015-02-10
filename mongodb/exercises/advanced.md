@@ -81,3 +81,5 @@ In this section there will really be a mixture of exercises in different categor
     Run the `db.products.find({category: "Øl"})` query again, only now use explain with it.
 
     It's quite obvious by the result of explain that this query is not very efficient. Add an index to the category field. Run the query with explain again. See any improvement?
+6. ### All done?
+    Completed all exercises? Pick your favorite programming language and show us what you can create with the dataset we have provided you with in the `kursserie` database.
