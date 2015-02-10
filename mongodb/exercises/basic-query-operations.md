@@ -26,7 +26,7 @@ _Look at the mongodb/README.md for how to access the mongo shell where you will 
 
     You can use a query like `{"title": /^TERM/}` to find all documents where title starts with the term TERM.
 
-    _New for this query is the use of [projection](http://docs.mongodb.org/manual/reference/method/db.collection.find/#projections) as a parameter to the find query and the use of a [regex](http://docs.mongodb.org/manual/reference/operator/query/regex/) for querying._
+    _New for this query is the use of the [projection](http://docs.mongodb.org/manual/reference/method/db.collection.find/#projections) parameter in a find query and the use of a [regex](http://docs.mongodb.org/manual/reference/operator/query/regex/) for querying._
 
 5. ### Paginated list of products
 
