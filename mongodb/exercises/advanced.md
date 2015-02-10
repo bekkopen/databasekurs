@@ -50,7 +50,7 @@ In this section there will really be a mixture of exercises in different categor
     After adding the text index, try to [search](http://docs.mongodb.org/manual/reference/operator/query/text/#search-field) for `kardemomme`.
 
 4. ### Aggregation
-    The [aggregation framework](http://docs.mongodb.org/manual/aggregation/) lets you make powerful group by like operations on data.
+    The [aggregation framework](http://docs.mongodb.org/manual/aggregation/) lets you make powerful group by like queries on data.
 
     #### Number of products in each category
       Find the total number of products in each category
