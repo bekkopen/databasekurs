@@ -10,5 +10,8 @@
 
 
 ## 2. Pint please!
-    MATCH (u:User{username:"jorgen.braseth"}),(p:Product{varenummer:"8040202"})
-    CREATE (u)<-[:WAS_PURCHASED_BY]-(:ShoppingCart)<-[:WAS_PART_OF_CART]-(p)
+    MATCH
+    (u:User{username:"jorgen.braseth"}),
+    (p:Product{varenummer:"8040202"})
+    CREATE
+    (u)<-[:WAS_PURCHASED_BY]-(:ShoppingCart)<-[:WAS_PART_OF_CART]-(p)
