@@ -23,32 +23,3 @@ Register a cart, link it to your user and but a bottle of Brewdog's great "Rip T
 * The ```varenummer``` of the "Rip Tide Stout" is **8040202**
 * The relationship type between a ```ShoppingCart``` and a ```Product``` is ```WAS_PART_OF_CART```
 * The relationship type between a ```ShoppingCart``` and a ```User``` is ```WAS_PURCHASED_BY```
-
-
-
-
-<!---
-
-## 3. New item in stock!
-A new item has become available - the famous [Westvleteren 12](http://en.wikipedia.org/wiki/Westvleteren_Brewery), widely considered to be the best beer in the world! Let's put it in the database!
-
-**New Nodes to make**
-
-```Product```
-
-* ```varenummer``` = "12601355"
-* ```pricePerLiter``` = "390"
-* ```url``` = "http://sintsixtus.be/"
-* ```description``` = ""
-* ```price``` = "130"
-* ```abv``` = "10.2"
-
-```LiquorType```
-
-* ```name``` = "Westvleteren 12"
-
-**Relationships**
-
-Link to the...
-
--->

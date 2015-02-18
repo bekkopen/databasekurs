@@ -1,4 +1,4 @@
-### Part 3 - Advanced queries
+# Part 3 - Advanced queries
 _Forgot the syntax? Check out the [cypher Cheat sheet](http://neo4j.com/docs/2.1/cypher-refcard/) or look in [the the official docs](http://neo4j.com/docs/stable/cypher-query-lang.html)_
 
 _Having trouble figuring out what the query should look like? Get out a pen and pencil and draw the sub-graph you are looking for!_
