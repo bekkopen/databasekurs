@@ -14,7 +14,7 @@ Let's get you into the system! Insert a new User node, with your personal inform
 > **OOPS!**
 >
 > Created an erroneous node by mistake?
-> Take a look at the [DELETE](http://neo4j.com/docs/stable/query-delete.html) keyword - deleting nodes is as easy as finding them in Neo4J! |
+> Take a look at the [DELETE](http://neo4j.com/docs/stable/query-delete.html) keyword - deleting nodes is as easy as finding them in Neo4J!
 
 ## 2. Pint please!
 Let's get you a beer! To register at purchase, you need to create a shopping cart and create a relationship between the cart and a product, and between the cart and a user.
