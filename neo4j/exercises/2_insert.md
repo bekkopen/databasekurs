@@ -3,6 +3,10 @@ _Forgot the syntax? Check out the [cypher Cheat sheet](http://neo4j.com/docs/2.1
 
 _Having trouble figuring out what the query should look like? Get out a pen and pencil and draw the sub-graph you are looking for!_
 
+![datamodell](https://raw.githubusercontent.com/bekkopen/databasekurs/master/neo4j/exercises/datamodell.png)
+
+
+
 ## 1. Register as a user!
 Let's get you into the system! Insert a new User node, with your personal information, into the database.
 
