@@ -16,7 +16,7 @@ Get a single product category
 **Need help?**
 Take a look at the [MATCH](http://neo4j.com/docs/stable/query-match.html) keyword
 
-## 2. What kind of liquor do we have?
+## 2. What kinds of liquor do we have?
 List the **name** of **all** the product categories.
 
 * The name is stored in a property called ```name```
