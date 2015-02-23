@@ -3,6 +3,8 @@ _Forgot the syntax? Check out the [cypher Cheat sheet](http://neo4j.com/docs/2.1
 
 _Having trouble figuring out what the query should look like? Get out a pen and pencil and draw the sub-graph you are looking for!_
 
+![datamodell](https://raw.githubusercontent.com/bekkopen/databasekurs/master/neo4j/exercises/datamodell.png)
+
 
 ## 1. Mirror mirror on the wall...
 Which is the most sold ```LiquorType``` of them all?
@@ -12,7 +14,7 @@ Which is the most sold *strong* beer ```LiquorType```?
 
 * We consider anything **higher than 10% ABV** a strong beer.
 * The ABV is stored in the ```abv``` property of ```Product```s
-* The ```Category``` of beer is "Øl"
+* The ```Category``` of beer is "Ã˜l"
 
 ## 3. The cravings of Mr. O'Keefe
 What ```Category``` is the most popular for **_Vernie O'Keefe_**, and how many times has he bought an item in that category?
