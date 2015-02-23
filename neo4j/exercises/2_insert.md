@@ -22,7 +22,7 @@ Let's get you into the system! Insert a new User node, with your personal inform
 
 ## 2. Pint please!
 Let's get you a beer! To register at purchase, you need to create a shopping cart and create a relationship between the cart and a product, and between the cart and a user.
-Register a cart, link it to your user and but a bottle of Brewdog's great "Rip Tide Stout" in the cart!
+Register a cart, link it to your user and buy a bottle of Brewdog's great "Rip Tide Stout" in the cart!
 
 * The ```varenummer``` of the "Rip Tide Stout" is **8040202**
 * The relationship type between a ```ShoppingCart``` and a ```Product``` is ```WAS_PART_OF_CART```
