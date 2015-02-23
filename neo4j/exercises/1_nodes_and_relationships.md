@@ -3,6 +3,10 @@ _Forgot the syntax? Check out the [cypher Cheat sheet](http://neo4j.com/docs/2.1
 
 _Having trouble figuring out what the query should look like? Get out a pen and pencil and draw the sub-graph you are looking for!_
 
+
+![datamodell](https://raw.githubusercontent.com/bekkopen/databasekurs/master/neo4j/exercises/datamodell.png)
+
+
 ## 1. Find a product category
 Get a single product category
 
@@ -27,7 +31,7 @@ List all the sub districts in Burgund, France.
 ## 4. Have a beer!
 Get a beer product from the database.
 
-* The category for beer is "Øl"
+* The category for beer is "Ã˜l"
 * The products are stored in nodes with label ```Product```
 * Products are related to categories via a ```IS_OF_CATEGORY``` relation.
 
@@ -51,5 +55,5 @@ Brannon Larkin has a hankering for a Scottish brew! Help him find some beer from
 List the ```name``` of all the ```Liquortypes``` that are beers from Scotland.
 
 * The ```country``` of ```Origin``` should be "Skottland"
-* The ```Category``` must be "Øl"
+* The ```Category``` must be "Ã˜l"
 
