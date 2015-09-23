@@ -12,7 +12,7 @@ Which is the most sold ```LiquorType``` of them all?
 ## 2. Beer-mania!
 Which is the most sold *strong* beer ```LiquorType```?
 
-* We consider anything **higher than 10% ABV** a strong beer.
+* We consider anything **higher than or equal 10% ABV** a strong beer.
 * The ABV is stored in the ```abv``` property of ```Product```s
 * The ```Category``` of beer is "Øl"
 
