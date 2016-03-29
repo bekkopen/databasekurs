@@ -3,7 +3,7 @@ CREATE INDEX ON :ShoppingCart(cartId);
 
 //Les kj�p
 USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:E:/jobb/nosqlkurs/databasekurs/neo4j/test-data-generation/generated/carts.csv" AS csv
+LOAD CSV WITH HEADERS FROM "https://github.com/bekkopen/databasekurs/blob/master/neo4j/test-data-generation/generated/carts.csv" AS csv
 
 MERGE (cart:ShoppingCart {cartId: csv.cart_id})
 MERGE (user:User {username: csv.username})
