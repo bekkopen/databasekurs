@@ -21,7 +21,7 @@ WriteResult({ "nInserted" : 1 })
 
 2. ### Buy something for yourself
   ```js
-> db.users.update({_id: "elon.musk"}, {"$push": {carts: { products: [994901, 515801]}})
+> db.users.update({_id: "elon.musk"}, {"$push": {carts: { products: [994901, 515801]}}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
   ```
   This should leave the "elon.musk" user in the following state:
@@ -34,7 +34,7 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
     "carts" : [
       {
         products: [ 994901, 515801 ]
-      },
+      }
     ]
   }
   ```

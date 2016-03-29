@@ -23,9 +23,6 @@ _Look at the mongodb/README.md for how to access the mongo shell where you will 
     "birthdate" : ISODate("1971-06-28T00:00:00Z"),
     "carts" : [
       {
-        products: [ 994901, 515801 ]
-      },
-      {
         products: [ 4331001 ]
       }
     ]

@@ -2,7 +2,7 @@
 
 _Look at the mongodb/README.md for how to access the mongo shell where you will perform these exercises._
 
-In this section there will really be a mixture of exercises in different categories. Do not feel obliged to do them sequentially.
+In this section there will be a mixture of exercises in different categories. Do not feel obliged to do them sequentially.
 
 1. ### Advanced queries
 
@@ -81,5 +81,6 @@ In this section there will really be a mixture of exercises in different categor
     Run the `db.products.find({category: "Øl"})` query again, only now use explain with it.
 
     It's quite obvious by the result of explain that this query is not very efficient. Add an index to the category field. Run the query with explain again. See any improvement?
+
 6. ### All done?
     Completed all exercises? Pick your favorite programming language and show us what you can create with the dataset we have provided you with in the `kursserie` database.
