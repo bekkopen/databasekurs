@@ -33,7 +33,7 @@
 2522
     ```
 
-3. ### Cheapest beer
+3. ### Cheapest "Brennevin"
     ```js
     > db.products.find({category: "Brennevin"}).sort({pricePerLiter: 1}).limit(3)
 { "_id" : 5227804, "title" : "Gordon's Gin & Tonic", "containerSize" : "25 cl", "price" : 29.9, "pricePerLiter" : 115.6, "productType" : "Øvr. brennevin u/22%", "productSelection" : "Bestillingsutvalg", "shopCategory" : "Uavhengig sortiment", "foodPairings" : "", "countryRegion" : "Italia, Øvrige, Øvrige", "ingredients" : "Einebær, koriander, sitrus, andre krydder, vann, sukker", "alcohol" : 6.4, "sugar" : "66,00", "acid" : "Ukjent", "manufacturer" : "The Smirnoff Co.", "wholesaler" : "Diageo Norway AS", "distributor" : "SKANLOG VSD AS", "containerType" : "Metallemballasje Resirk II (pant)", "category" : "Brennevin" }
@@ -52,6 +52,18 @@
     { "title" : "The Glenlivet 18 Years Old" }
     { "title" : "The Glenlivet XXV Years Old" }
     { "title" : "The Glenlivet Nadurra 16 Years Old Cask Strength" }
+    ```
+    Alternative with distinct:
+    ```js
+    > db.products.distinct('title',{title: /^The Glenlivet/})
+    [
+      "The Glenlivet Single Malt 12 Years Old",
+      "The Glenlivet 15 Y.O. French Oak Reserve",
+      "The Glenlivet Guardians Chapter",
+      "The Glenlivet 18 Years Old",
+      "The Glenlivet XXV Years Old",
+      "The Glenlivet Nadurra 16 Years Old Cask Strength"
+    ]
     ```
 
 5. ### Paginated list of products

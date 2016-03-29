@@ -14,19 +14,21 @@ _Look at the mongodb/README.md for how to access the mongo shell where you will 
 
     _For this query you use [Count](http://docs.mongodb.org/manual/reference/method/db.collection.count/)_
 
-3. ### Cheapest beer
+3. ### Cheapest "Brennevin"
 
-    Find the three cheapest beers (per liter) in the products collection.
+    Find the three cheapest Brennevin (per liter) in the products collection.
 
     _For this you need to use [Find](http://docs.mongodb.org/manual/reference/method/db.collection.find/), [Sort](http://docs.mongodb.org/manual/reference/method/cursor.sort/#cursor.sort) and [Limit](http://docs.mongodb.org/manual/reference/method/cursor.limit/)._
 
 4. ### Find all products from The Glenlivet
 
-    Find all products which title starts with The Glenlivet. Only project the title field.
+    Find all products which title starts with "The Glenlivet". Only project the title field.
 
     You can use a query like `{"title": /^TERM/}` to find all documents where title starts with the term TERM.
 
     _New for this query is the use of the [projection](http://docs.mongodb.org/manual/reference/method/db.collection.find/#projections) parameter in a find query and the use of a [regex](http://docs.mongodb.org/manual/reference/operator/query/regex/) for querying._
+
+    Alternative use [distinct](https://docs.mongodb.org/manual/reference/method/db.collection.distinct/) to list only the titles.
 
 5. ### Paginated list of products
 

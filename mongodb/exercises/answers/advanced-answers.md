@@ -164,7 +164,7 @@
       "nYields" : 124,
       "nChunkSkips" : 0,
       "millis" : 23,
-      "server" : "mac-frodebjerke.local:27017",
+      "server" : "mac-username.local:27017",
       "filterSet" : false
     }
     ```
@@ -204,7 +204,7 @@
       ]
     ]
   },
-  "server" : "mac-frodebjerke.local:27017",
+  "server" : "mac-username.local:27017",
   "filterSet" : false
 }
     ```
