@@ -25,3 +25,4 @@ Ingenting er perfekt. Databasene vi har introdusert passer seg
 absolutt ikke til alt. Den tredje og siste dagen handler om 
 hvilken database som egner seg når. At de forskjellige databasetypene 
 kan brukes i symfoni bør heller ikke komme som noe sjokk.
+
