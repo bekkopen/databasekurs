@@ -8,5 +8,8 @@ og det kan være nyttig å tenke seg at det ikke er mulig, selv om
 det er mulig med Redis. Det viktigste for en Key/value-database 
 er hastighet. De er da  også stort sett uhyre raske og brukes derfor 
 ofte som en cache eller i arkitekturpatterns som pub/sub eller 
-message broker. Redis for mye av sin enorme hastighet gjennom 
+message broker. Redis får mye av sin enorme hastighet gjennom 
 å kjøre i minnet samt å kunne kjøre i cluster for tilgjengelighet.
+
+Redis brukes mye av skyleverandrøer i cache-løsninger. Amazon ElastiCache
+Azure Redis Cache og Heroku Redis er eksempler på dette.
