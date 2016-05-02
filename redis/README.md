@@ -11,5 +11,5 @@ ofte som en cache eller i arkitekturpatterns som pub/sub eller
 message broker. Redis får mye av sin enorme hastighet gjennom 
 å kjøre i minnet samt å kunne kjøre i cluster for tilgjengelighet.
 
-Redis brukes mye av skyleverandrøer i cache-løsninger. Amazon ElastiCache
-Azure Redis Cache og Heroku Redis er eksempler på dette.
+Redis brukes mye av skyleverandører i cache-løsninger. Amazon ElastiCache,
+Azure Redis Cache og Heroku Redis er eksemploer på dette.
