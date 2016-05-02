@@ -22,7 +22,8 @@ CREATE INDEX ON :Product(varenummer);
 //Les inn produktkatalogen til vinmonopolet
 USING PERIODIC COMMIT
 //LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/bekkopen/databasekurs/neo4j/neo4j/data/vinmonopolet_vasket.csv" AS csv
-LOAD CSV WITH HEADERS FROM "https://github.com/bekkopen/databasekurs/blob/master/neo4j/data/vinmonopolet-utf8.csv" AS csv
+//LOAD CSV WITH HEADERS FROM "https://github.com/bekkopen/databasekurs/blob/master/neo4j/data/vinmonopolet-utf8.csv" AS csv
+LOAD CSV WITH HEADERS FROM "file:///Users/eivindbergstol/dev/nosql_databasekurs/neo4j/data/vinmonopolet-utf8.csv" AS csv
 
 CREATE (unit:Product {
    varenummer: csv.Varenummer,

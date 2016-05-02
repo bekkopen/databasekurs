@@ -1,6 +1,12 @@
 Databasekurs
 ============
 
+Databasekurset til NoSQL-fagruppen i BEKK er et grunnlag for å lære 
+om et utvalg NoSQL-databaser. Gruppen kan også kjøre dette som 
+forelesninger eller bare en workshop for en database.
+Hele poenget med Databasekurs er å kunne kombinere, utvide og plukke
+det som måtte være relevant i forskjellige settinger.
+
 Beskrivelse
 ------------
 Database er ikke bare database lenger, de kommer i alle former og 
@@ -16,13 +22,13 @@ mye funksjonalitet har MongoDB vist seg å være enkel i bruk for
 utviklere. Fokuset for denne første kursdagen blir MongoDB 
 som et verktøy for å lage små applikasjoner raskt.
 
-Dag to er det Neo4j som er i fokus. Denne grafdatabasen viser 
-sin styrke når den kan traversere data som er sterkt sammenkoblede. 
-Den er godt egnet i brukstilfeller som sosiale nettverk, 
-realtime data-analyse og anbefalingsmotorer.
+Neo4j er en grafdatabase som viser sin styrke når den kan traversere 
+data som er sterkt sammenkoblede. Den er godt egnet i brukstilfeller 
+som sosiale nettverk, realtime data-analyse og anbefalingsmotorer.
 
 Ingenting er perfekt. Databasene vi har introdusert passer seg 
-absolutt ikke til alt. Den tredje og siste dagen handler om 
-hvilken database som egner seg når. At de forskjellige databasetypene 
-kan brukes i symfoni bør heller ikke komme som noe sjokk.
+absolutt ikke til alt. Å finne ut av domene en database skal puttes 
+inn, hvilken applikasjon den skal støtte eller samarbeide med
+er en viktig diskusjon. At mange av disse databasene kan spille
+på lag i en polyglot arkitektur burde heller ikke være noen overrakselse.
 
