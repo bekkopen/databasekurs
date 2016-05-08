@@ -2,6 +2,8 @@
 
 ## Answers
 
+This is just a proposal to a solution. Yours might differ.
+
 ### PART I - Nodes and Relationships
 
 #### Exercise 1
@@ -13,36 +15,119 @@ RETURN product LIMIT 5
 
 #### Exercise 2
 
-The product with `productId` 9531501 is a *Chardonnay* from *Casillero del Diablo*.
-How much does it cost?
+```sql
+MATCH (product:Product { productId: 9531501} )
+RETURN product.pricePerLiter
+```
 
-*__Hint:__ The price is stored as `pricePerLiter` in the `Product`-node.*
+##### Expected result
+
+| product.pricePerLiter |
+| --------------------- |
+| 137.2                 |
 
 #### Exercise 3
 
-Find all products that have *Casillero del Diablo* in the name.
+```sql
+MATCH (product:Product)
+WHERE product.name CONTAINS 'Casillero del Diablo'
+RETURN product
+```
 
-*__Hint:__ Look at the `WHERE` and `CONTAINS` keywords, or use regular expressions `=~`*
+##### Expected result
+
+Should return 11 products with productId:
+
+| product.productId |
+| ----------------- |
+| 260501            |
+| 260502            |
+| 412401            |
+| 1566001           |
+| 1590606           |
+| 1754601           |
+| 4403201           |
+| 4497501           |
+| 9347601           |
+| 9531501           |
+| 9804306           |
 
 #### Exercise 4
 
-What type of liquor is the product "Cutty Sark"?
+```sql
+MATCH (:Product { name: 'Cutty Sark' })-[:IS_TYPE_OF]->(productType)
+RETURN productType
+```
 
-*__Hint:__ Liquor types are stored as `productType` in the `ProductType`-node.*
+##### Expected result
+
+| productType.productType |
+| ----------------------- |
+| Whisky                  |
 
 #### Exercise 5
 
-What country are *Casillero del Diablo* wines are from?
+```sql
+MATCH (:Product { productId: 9531501 })-[:HAS_ORIGIN]-()-[:IS_IN]->(country)
+RETURN country
+```
 
-*__Hint:__ Remember from before that the `Product` with `productId` 9531501 is a Casillero del Diablo. Use this as the starting point.*
+##### Expected result
+
+| country.name  |
+| ------------- |
+| Chile         |
 
 ### PART II - Something a little more advanced
 
 #### Exercise 1
 
-Find all the *Gin* from *England*.
+```sql
+MATCH (:ProductType { productType: 'Gin'})<-[:IS_TYPE_OF]-(product)-[:HAS_ORIGIN]->()-[:IS_IN]->(:Country { name: 'England' })
+RETURN product
+```
 
-*__Hint:__ Gin is a `productType`.*
+##### Expected result
+
+Should return 35 products with productId:
+
+| product.productId |
+| ----------------- |
+| 3067201           |
+| 4524501           |
+| 4765101           |
+| 4240701           |
+| 4240302           |
+| 4240702           |
+| 4184001           |
+| 5133501           |
+| 5277601           |
+| 9498301           |
+| 9375801           |
+| 9804201           |
+| 9714001           |
+| 18702             |
+| 18701             |
+| 19002             |
+| 19001             |
+| 140701            |
+| 298201            |
+| 282801            |
+| 483001            |
+| 482901            |
+| 800101            |
+| 782801            |
+| 1568002           |
+| 1568001           |
+| 1305701           |
+| 1207302           |
+| 1207301           |
+| 1201401           |
+| 998401            |
+| 743601            |
+| 756501            |
+| 783501            |
+| 784001            |
 
 #### Exercise 2
 
