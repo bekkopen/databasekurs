@@ -50,4 +50,4 @@ This will import the *csv* files with all the juicy data that we will query.
 *__ALL PROPERTIES IN THE DATABASE ARE IN NORWEGIAN!__*
 *This means that f.eks. the `name` property of the `Country`-node for South Africa is "Sør Afrika".*
 
-Alright, you are now ready to scroll down to the [exercises](README.md)!
+Alright, you are now ready to scroll down to the [exercises](../../)!
