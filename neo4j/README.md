@@ -2,6 +2,56 @@
 
 ## Setup
 
+### Windows
+
+### Download and install
+
+Go download [Neo4j](http://neo4j.com/download/other-releases/) and select the *.zip* file for your system (x64 or x32).
+
+Extract the package you downloaded and move it to the root of your `C:\`-drive and rename it to `neo4j`.
+
+Your `C:\`-drive should look something like the following image.
+
+![Windows disk drive](images/win_drive.png)
+
+And your `neo4j`-folder should look something like this:
+
+![Windows Neo4j folder](images/win_folder.png)
+
+#### Starting Neo4j for the first times
+
+To start Neo4j, simply open a terminal window in __administrator mode__. You can do this by:
+
+1. Clicking *Start* and typing `cmd` in the search-box.
+2. Either pressing *CTRL+SHIFT+ENTER* or by right-clicking `cmd` and select *Run as administrator*
+
+![Windows Run as admin](images/win_admin.png)
+
+You can now type `cd c:\neo4j\bin` in the terminal window and then `neo4j.bat install-service` to set up the Neo4j-windows service.
+
+Noe you can start Neo4j by typing `neo4j start`.
+
+Neo4j will start running on [localhost:7474](http://localhost:7474). This is where we will preform most of our queries.
+
+Head over to your local Neo4j instance. If you are asked for a username/password, use the default `neo4j/neo4j`.
+
+If you are not asked for a username/password, you might not be connected to Neo4j. If so, just type `:server connect` in the query-field.
+
+You might be promted to create a new password. Make it something simple for now, so you will remember it. This password might come in handy at a later time.
+
+You can shut down Neo4j by typing `neo4j stop` at `c:\neo4j\bin` in a terminal window.
+
+#### Importing the database
+
+Open up terminal window in __administrator mode__ and navigate to the root of this project and in to the neo4j-data folder `{Your path}\databasekurs\neo4j\data`. Here you can simply run `import.bat`.
+
+This will import the *csv* files with all the juicy data that we will query.
+
+*__ALL PROPERTIES IN THE DATABASE ARE IN NORWEGIAN!__*
+*This means that f.eks. the `name` property of the `Country`-node for South Africa is "Sør Afrika".*
+
+Alright, you are now ready to scroll down to the exercises!
+
 ### Mac
 
 #### Download and install
@@ -12,11 +62,14 @@ With Homebrew installed simply type `brew install neo4j`.
 
 #### Starting Neo4j for the first times
 
-To start Neo4j simply open a terminal window and type `neo4j start`.
+To start Neo4j, simply open a terminal window and type `neo4j start`.
 
 Neo4j will start running on [localhost:7474](http://localhost:7474). This is where we will preform most of our queries.
 
 Head over to your local Neo4j instance. If you are asked for a username/password, use the default `neo4j/neo4j`.
+
+If you are not asked for a username/password, you might not be connected to Neo4j. If so, just type `:server connect` in the query-field.
+
 You might be promted to create a new password. Make it something simple for now, so you will remember it. This password might come in handy at a later time.
 
 You can shut down Neo4j by typing `neo4j stop` in a terminal window.
@@ -30,12 +83,14 @@ This will import the *csv* files with all the juicy data that we will query.
 *__ALL PROPERTIES IN THE DATABASE ARE IN NORWEGIAN!__*
 *This means that f.eks. the `name` property of the `Country`-node for South Africa is "Sør Afrika".*
 
+Alright, you are now ready for the exercises!
+
 ## Exercises
 
 We are going to check out the products Vinmonopolet has to offer.
 The data that you imported to you database during the setup follows the schema below.
 
-![Datamodel](exercises/datamodell.png)
+![Datamodel](images/datamodell.png)
 
 Check out the [cypher Cheat sheet](http://neo4j.com/docs/2.1/cypher-refcard/) or look in [the the official docs](http://neo4j.com/docs/stable/cypher-query-lang.html) for syntaxes.
 
@@ -92,7 +147,7 @@ You should be able to find both with only one query.
 
 #### Exercise 3
 
-Which producer has the most products?
+Which producer has the most products in the database?
 
 *__Hint:__ This is a good opportunity to start using the syntax `COUNT` and `ORDER BY`.*
 
@@ -104,7 +159,7 @@ What is the most expensive Russian Vodka?
 
 #### Exercise 5
 
-Which country produces the most red wine? And what region in this country produces the most?
+Which country produces the most red wine? And what region in this country produces the most red wine?
 
 #### Exercise 6
 
@@ -123,8 +178,9 @@ Insert a `Product`-node with the properties `name`, `pricePerLiter`, and a `prod
 
 Connect our new beer to the `productType`-node for beer ("Øl" in norwegian).
 
-You can also go ahead and find and connect our beer to a suiting `ABV`-node (short for *Alcohol by volume*).
-And we probably need to connect it to a `Packaging`-, `Volume`-, as well as a `Region`-node.
+You can also go ahead and find as well as connect our beer to a suiting `ABV`-node (short for *Alcohol by volume*).
+
+We should also connect it to a `Packaging`-, `Volume`-, as well as a `Region`-node.
 
 #### Exercise 3
 
