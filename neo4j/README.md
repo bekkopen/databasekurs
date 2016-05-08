@@ -8,6 +8,8 @@
 
 Go download [Neo4j](http://neo4j.com/download/other-releases/) and select the *.zip* file for your system (x64 or x32).
 
+![Neo4j download windows](images/win_download.png)
+
 Extract the package you downloaded and move it to the root of your `C:\`-drive and rename it to `neo4j`.
 
 Your `C:\`-drive should look something like the following image.
@@ -92,7 +94,7 @@ The data that you imported to you database during the setup follows the schema b
 
 ![Datamodel](images/datamodell.png)
 
-Check out the [cypher Cheat sheet](http://neo4j.com/docs/2.1/cypher-refcard/) or look in [the the official docs](http://neo4j.com/docs/stable/cypher-query-lang.html) for syntaxes.
+Check out the [cypher cheat-sheet](http://neo4j.com/docs/2.1/cypher-refcard/) or look in [the the official docs](http://neo4j.com/docs/stable/cypher-query-lang.html) for syntaxes.
 
 If you are having trouble figuring out what the query should look like, it might help to get a pen and some paper and draw the graph you are looking for.
 
