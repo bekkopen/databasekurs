@@ -36,21 +36,7 @@ RETURN product
 
 ##### Expected result
 
-Should return 11 products with productId:
-
-| product.productId |
-| ----------------- |
-| 260501            |
-| 260502            |
-| 412401            |
-| 1566001           |
-| 1590606           |
-| 1754601           |
-| 4403201           |
-| 4497501           |
-| 9347601           |
-| 9531501           |
-| 9804306           |
+Should return 11 *Casillero del Diablo* products.
 
 #### Exercise 4
 
@@ -89,92 +75,47 @@ RETURN product
 
 ##### Expected result
 
-Should return 35 products with productId:
-
-| product.productId |
-| ----------------- |
-| 3067201           |
-| 4524501           |
-| 4765101           |
-| 4240701           |
-| 4240302           |
-| 4240702           |
-| 4184001           |
-| 5133501           |
-| 5277601           |
-| 9498301           |
-| 9375801           |
-| 9804201           |
-| 9714001           |
-| 18702             |
-| 18701             |
-| 19002             |
-| 19001             |
-| 140701            |
-| 298201            |
-| 282801            |
-| 483001            |
-| 482901            |
-| 800101            |
-| 782801            |
-| 1568002           |
-| 1568001           |
-| 1305701           |
-| 1207302           |
-| 1207301           |
-| 1201401           |
-| 998401            |
-| 743601            |
-| 756501            |
-| 783501            |
-| 784001            |
+Should return 35 products.
 
 #### Exercise 2
 
-Which products comes in the biggest container and what type of container is it?
-You should be able to find both with only one query.
+```sql
+MATCH (volume:Volume)
+WITH max(volume.liter) AS maxVolume
+MATCH (packaging)-[:CONTAINS]->(volume:Volume { liter: maxVolume })<-[:HAS]-(product)
+RETURN product, packaging
+```
 
-*__Hint:__ Container sizes are stored in the `Volume`-node and Containers are stored in `Packaging`.*
+##### Expected result
+
+| product.productId  | packaging.packaging              |
+| ------------------ | -------------------------------- |
+| 5931107            | Glassflaske over eller lik 4 ltr |
 
 #### Exercise 3
 
-Which producer has the most products in the database?
+```sql
+MATCH (producer:Producer)<-[IS_PRODUCED_BY]-(product:Product)
+RETURN count(product) AS products, producer
+ORDER BY products DESC LIMIT 1
+```
 
-*__Hint:__ This is a good opportunity to start using the syntax `COUNT` and `ORDER BY`.*
+##### Expected result
+
+| products  | product.producerId |
+| --------- | ------------------ |
+| 166       | arcus              |
 
 #### Exercise 4
 
-What is the most expensive Russian Vodka?
+```sql
+MATCH (:Country {countryId: 'russland'})-[*2]-(product:Product {})-->(:ProductType {productTypeId: 'vodka'})
+RETURN product
+ORDER BY product.pricePerLiter DESC LIMIT 1
+```
 
-*__Hint:__ Remember that properties of nodes are in Norwegian, so Russia is "Russland".*
+##### Expected result
 
-#### Exercise 5
-
-Which country produces the most red wine? And what region in this country produces the most red wine?
-
-#### Exercise 6
-
-Find the product that gets you the most value for the money.
-This means the biggest container with regards to the price.
-
-### PART III - Inserting and deleting
-
-#### Exercise 1
-
-Lets start a beer brewery! And our first product is already being released!
-
-Insert a `Product`-node with the properties `name`, `pricePerLiter`, and a `productId`. We can leave the `url` blank.
-
-#### Exercise 2
-
-Connect our new beer to the `productType`-node for beer ("Øl" in norwegian).
-
-You can also go ahead and find as well as connect our beer to a suiting `ABV`-node (short for *Alcohol by volume*).
-
-We should also connect it to a `Packaging`-, `Volume`-, as well as a `Region`-node.
-
-#### Exercise 3
-
-This beer don't taste well, does it? Let's forget the whole thing.
-
-Delete our new beer `Product`-node and its relationships.
+| product.productId  | product.pricePerLiter |
+| ------------------ | --------------------- |
+| 5600201            | 714.1                 |
