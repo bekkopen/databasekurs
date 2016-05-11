@@ -75,6 +75,7 @@ What is the most expensive Russian Vodka?
 #### Exercise 5
 
 Which country produces the most red wine? And what region in this country produces the most red wine?
+You should be able to find everything with only one query.
 
 #### Exercise 6
 

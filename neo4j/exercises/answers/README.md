@@ -122,6 +122,22 @@ ORDER BY product.pricePerLiter DESC LIMIT 1
 
 #### Exercise 5
 
+```sql
+MATCH (:ProductType {productType: 'Rødvin'})<--(product:Product)-[*2..2]->(country:Country)
+WITH count(DISTINCT product) AS countryProductCount, country
+ORDER BY countryProductCount DESC LIMIT 1
+MATCH (:Country {countryId: country.countryId})<--(region:Region)<--(product:Product)
+WITH count(DISTINCT product) AS regionProductCount, countryProductCount, region, country
+ORDER BY regionProductCount DESC LIMIT 1
+```
+
+##### Expected result
+
+| country.name | region.name | countryProductCount | regionProductCount |
+| ------------ | ----------- | ------------------- | ------------------ |
+| Italia       | Piemonte    | 2362	               | 970                |
+
+
 #### Exercise 6
 
 ```sql
