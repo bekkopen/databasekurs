@@ -119,3 +119,20 @@ ORDER BY product.pricePerLiter DESC LIMIT 1
 | product.productId  | product.pricePerLiter |
 | ------------------ | --------------------- |
 | 5600201            | 714.1                 |
+
+#### Exercise 5
+
+#### Exercise 6
+
+```sql
+MATCH (product:Product)-[:HAS]->(volume:Volume)
+WITH volume.liter*product.pricePerLiter AS price, product AS product
+RETURN price, product
+ORDER BY price ASC LIMIT 1
+```
+
+##### Expected result
+
+| price  | product.productTypeId |
+| ------ | --------------------- |
+| 16.104 | 9795702               |
